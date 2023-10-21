@@ -96,7 +96,7 @@ def BuildPacket(Grouping, Serial, Button, Counter, MSB, LSB, Hold):
 
 
 def ReadCounter(counter_file, serial):
-    filename = counter_file + hex(serial) + ".txt"
+    filename = counter_file + ".txt"
     if os.path.isfile(filename):
         fo = open(filename, "r")
         Counter = int(fo.readline())
@@ -107,7 +107,7 @@ def ReadCounter(counter_file, serial):
 
 
 def WriteCounter(counter_file, serial, Counter):
-    filename = counter_file + hex(serial) + ".txt"
+    filename = counter_file + ".txt"
     #_LOGGER.warning("Writing to " + filename + ": " + str(Counter) )
     fo = open(filename, "w")
     fo.write(str(Counter))
